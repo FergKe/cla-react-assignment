@@ -1,3 +1,3 @@
-const catagoriesArray = ["Databases", "Data Structures", "Math", "Graphs"];
+const catagoriesArray = ["Databases", "Data structure", "Math", "Graphs"];
 
 export default catagoriesArray;

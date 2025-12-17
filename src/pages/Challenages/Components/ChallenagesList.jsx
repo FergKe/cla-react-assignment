@@ -1,11 +1,13 @@
 import challenagesArray from '../../../data/challenagesArray'
 import ChallenageItem from './ChallenageItem'
+import useCategorySelection from '../../../Stores/useCategorySelection'
 
 export default function ChallenagesList () {
+    const list = useCategorySelection((state) => state.challenageList)
 
     return (
-        <div className='bg-cla-white flex-1 min-h-0 overflow-y-auto rounded-xl drop-shadow-md'>
-            <table className='w-full border-collapse'>
+        <div className='bg-cla-white flex-1 min-h-0 overflow-y-auto shadow-md rounded-xl'>
+            <table className='w-full table-fixed'>
                 <thead>
                     <tr className='bg-slate-200 h-10 sticky top-0'>
                         <th className='font-noto text-center text-sm font-semibold'>Status</th>
@@ -16,7 +18,7 @@ export default function ChallenagesList () {
                     </tr>
                 </thead>
                 <tbody className=''>
-                    {challenagesArray.map((challenage) => <ChallenageItem item={challenage} key={challenage.id} />)}
+                    {list.map((challenage) => <ChallenageItem item={challenage} key={challenage.id} />)}
                 </tbody>
             </table>
         </div>

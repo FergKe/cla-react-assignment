@@ -5,8 +5,10 @@ const useCategorySelection = create((set) => ({
     unchangedList: challenagesArray,
 
     challenageList: challenagesArray,
+
+    resetList: () => set((state) => ({ challenageList: state.unchangedList })),
     
-    chanageCategory: (category) => set((state) => ({ challenageList: state.unchangedList.filter((item) => item.category === category)})),
+    changeCategory: (category) => set((state) => ({ challenageList: state.unchangedList.filter((item) => item.category === category)})),
 }))
 
 export default useCategorySelection
