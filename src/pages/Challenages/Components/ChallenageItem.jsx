@@ -37,7 +37,7 @@ export default function ChallenageItem ({item}) {
     }
 
     return (
-        <tr key={item.id} className="h-10 border-b-2">
+        <tr key={item.id} className="h-10 border-b-2 bg-cla-white">
             <td className="align-middle">
                     {iconSelection(item.status)}
             </td>
