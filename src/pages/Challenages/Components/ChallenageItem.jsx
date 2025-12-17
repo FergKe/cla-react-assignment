@@ -38,7 +38,7 @@ export default function ChallenageItem ({item}) {
 
     return (
         <tr key={item.id} className="h-10 border-b-2">
-            <td className="">
+            <td className="align-middle">
                     {iconSelection(item.status)}
             </td>
             <td className="font-noto text-center text-sm">
@@ -49,10 +49,12 @@ export default function ChallenageItem ({item}) {
                 {item.category}
 
             </td>
-            <td className="font-noto text-center text-sm py-2 flex justify-center">
-                <div className="w-24">
-                    {difficultyBox(item.difficulty)}
+            <td className="font-noto text-center text-sm align-middle">
+                <div className="flex items-center justify-center">
+                    <div className="w-24">
+                        {difficultyBox(item.difficulty)}
 
+                    </div>
                 </div>
 
             </td>

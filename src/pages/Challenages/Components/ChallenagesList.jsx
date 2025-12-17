@@ -1,10 +1,10 @@
 import challenagesArray from '../../../data/challenagesArray'
-import ChallenageItem from './challenageItem'
+import ChallenageItem from './ChallenageItem'
 
 export default function ChallenagesList () {
 
     return (
-        <div className='h-full flex-1 min-h-0 overflow-y-auto'>
+        <div className='flex-1 min-h-0 overflow-y-auto'>
             <table className='w-full border-collapse '>
                 <thead>
                     <tr className='bg-slate-200 h-10'>
