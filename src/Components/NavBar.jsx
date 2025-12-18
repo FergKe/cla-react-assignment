@@ -1,12 +1,15 @@
 import { Link } from 'react-router-dom'
 import logo from '../assets/logo.svg'
 import arrow from '../assets/arrow.svg'
+import { useState } from 'react'
 
 
 export default function NavBar () {
 
+    const [dropDown, setDropDown] = useState(false)
+
     return (
-        <nav className="bg-slate-200 px-8 h-12 flex flex-row items-center justify-between sticky top-0">
+        <nav className="bg-slate-200 px-8 h-12 flex flex-row items-center justify-between sticky top-0 z-50">
             <div id='nav-left-side' className='flex flex-row gap-4 items-center'>
                 <div className='flex flex-row gap-2 items-center'>
                     <img src={logo} alt="logo.svg" className='size-8' />
@@ -21,10 +24,25 @@ export default function NavBar () {
             </div>
 
             <div id='nav-right-side' className='flex flex-row items-center gap-2'>
-                <div className='bg-slate-500 size-8 rounded-full'></div>
+                <div onClick={() => setDropDown(!dropDown)} className='bg-slate-500 size-8 rounded-full cursor-pointer'></div>
                 <p className='font-noto font-medium'>Users Name</p>
                 <img src={arrow} alt="" className='size-6 rotate-180' />
 
+            </div>
+
+            <div id="drop-down"
+                className={`${dropDown ? "" : "hidden"} bg-white rounded-xl absolute top-[3.2rem] right-[10.3rem] w-48 px-2 py-2`}
+                onMouseLeave={() => setDropDown(false)}
+            >
+                <ul>
+                    <li className='py-1 hover:bg-cla-white px-4 rounded-xl'>
+                        Profile
+                    </li>
+                    <li className='py-1 hover:bg-cla-white px-4 rounded-xl'>
+                        Logout
+
+                    </li>
+                </ul>
             </div>
 
 

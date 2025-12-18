@@ -1,4 +1,4 @@
-import challenagesArray from '../../../data/challenagesArray'
+
 import ChallenageItem from './ChallenageItem'
 import useCategorySelection from '../../../Stores/useCategorySelection'
 
