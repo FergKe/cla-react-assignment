@@ -3,6 +3,7 @@ import CodersLogin from './pages/CodersLogin/CodersLogin';
 import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 import NavBar from './Components/NavBar';
 import Challenages from './pages/Challenages/Challenages';
+import Leaderboard from './pages/Leaderboard/Leaderboard';
 
 function AppLayout() {
   return (
@@ -25,6 +26,7 @@ export default function App() {
           <Route path='/signup' element={<CodersSignUp />} />
           <Route element={<AppLayout />}>
             <Route path='/challenages' element={<Challenages />} />
+            <Route path='/leaderboard' element={<Leaderboard />} />
           </Route>
         </Routes>
       </BrowserRouter>
