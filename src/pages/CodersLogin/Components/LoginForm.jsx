@@ -22,7 +22,7 @@ export default function SignUpForm () {
                     Sign Up
                 </button>
             </form>
-            <p className="text-center">New to CodeCLA? <Link to='/signup' className="text-cla-primary">Signup</Link></p>
+            <p className="text-center text-black">New to CodeCLA? <Link to='/signup' className="text-cla-primary">Signup</Link></p>
         </div>
     )
 }

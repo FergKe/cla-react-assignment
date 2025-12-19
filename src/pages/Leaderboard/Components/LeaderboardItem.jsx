@@ -2,7 +2,7 @@
 
 export default function LeaderboardItem ({ item }){
     return (
-        <tr className="h-10 border-b-2 bg-cla-white">
+        <tr className="h-10 border-b-2 bg-cla-white dark:bg-cla-primary dark:border-white">
             <td className="font-noto text-center text-sm">
                 {item.rank}
             </td>

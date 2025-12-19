@@ -1,19 +1,21 @@
 import { BsCheck2Circle } from "react-icons/bs";
 import { FaRegHourglass } from "react-icons/fa";
+import useDarkMode from "../../../Stores/useDarkMode";
 
 export default function ChallenageItem ({item}) {
+    const isDarkMode = useDarkMode((state) => state.isDarkMode)
     const iconSelection = (status) => {
         if (status === "Attempted") {
             return (
                 <div className="flex items-center justify-center">
-                    <FaRegHourglass className="size-5" color="orange" />
+                    <FaRegHourglass className="size-5" color={`${isDarkMode ? 'white' : 'orange'}`} />
 
                 </div>
             )
         } else {
             return (
                 <div className="flex items-center justify-center">
-                    <BsCheck2Circle className="size-5" color="green" />
+                    <BsCheck2Circle className="size-5" color={`${isDarkMode ? 'white' : 'green'}`} />
                 </div>
             )
         }
@@ -37,7 +39,7 @@ export default function ChallenageItem ({item}) {
     }
 
     return (
-        <tr key={item.id} className="h-10 border-b-2 bg-cla-white">
+        <tr key={item.id} className="h-10 border-b-2 bg-cla-white dark:bg-cla-primary dark:border-white">
             <td className="align-middle">
                     {iconSelection(item.status)}
             </td>

@@ -19,7 +19,7 @@ function AppLayout() {
 export default function App() {
 
   return (
-    <main className='h-dvh overflow-hidden bg-cla-white flex flex-col'>
+    <main className='h-dvh overflow-hidden dark:bg-cla-bg-dark dark:text-white bg-cla-white flex flex-col transition-colors'>
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<CodersLogin />} />
