@@ -1,11 +1,24 @@
-import { create } from "zustand";
+import { create } from 'zustand';
 
 const useAuthStore = create((set) => ({
-    users:[],
-    signUp: (username, password) => set({}),
-    user: null,
-    isAuthenticated: false,
-    setUser: (userData) => set({ user:userData, isAuthenticated: true}),
+    isAuthorised: false,
+
+    toggleAuthUser: () => set((state) => ({isAuthorised: !state.isAuthorised})),
+
+    signInUser: {
+        email: "",
+        passowrd: "",
+    },
+
+    updateSignInUser: (field, value) =>
+        set((state) => ({
+            signInUser: {
+                ...state.signInUser,
+                [field]: value
+            },
+            
+        })),
+
 }))
 
-export default useAuthStore;
+export default useAuthStore

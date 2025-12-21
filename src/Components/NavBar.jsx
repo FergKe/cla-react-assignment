@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import logo from '../assets/logo.svg'
-import arrow from '../assets/arrow.svg'
 import { useState } from 'react'
 import useDarkMode from '../Stores/useDarkMode'
 
