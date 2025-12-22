@@ -10,6 +10,13 @@ const useAuthStore = create((set) => ({
         passowrd: "",
     },
 
+    activeUser: {
+        first_name: "",
+        last_name: "",
+        password: "",
+        email: ""
+    },
+
     updateSignInUser: (field, value) =>
         set((state) => ({
             signInUser: {
@@ -18,6 +25,11 @@ const useAuthStore = create((set) => ({
             },
             
         })),
+    
+    setActiveUser: (user) => 
+        set((state) => ({
+            activeUser: {...state.activeUser, ...user}
+    }))
 
 }))
 

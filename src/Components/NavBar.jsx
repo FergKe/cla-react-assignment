@@ -2,12 +2,15 @@ import { Link } from 'react-router-dom'
 import logo from '../assets/logo.svg'
 import { useState } from 'react'
 import useDarkMode from '../Stores/useDarkMode'
+import useAuthStore from '../Stores/useAuthStore'
 
 
 export default function NavBar () {
-    const isDarkMode = useDarkMode((state) => state.isDarkMode)
-    const toggleDarkMode = useDarkMode((state) => state.toggleDarkMode)
-    const [dropDown, setDropDown] = useState(false)
+    const isDarkMode = useDarkMode((state) => state.isDarkMode);
+    const toggleDarkMode = useDarkMode((state) => state.toggleDarkMode);
+    const [dropDown, setDropDown] = useState(false);
+    const activeUser = useAuthStore((state) => state.activeUser);
+
 
     return (
         <nav className="bg-slate-200 dark:bg-cla-nav-bg-dark dark:text-white px-8 h-12 flex flex-row items-center justify-between sticky top-0 z-50 transition-all">
@@ -26,7 +29,7 @@ export default function NavBar () {
 
             <div id='nav-right-side' className='flex flex-row items-center gap-2'>
                 <div onClick={() => setDropDown(!dropDown)} className='bg-slate-500 size-8 rounded-full cursor-pointer'></div>
-                <p onClick={() => setDropDown(!dropDown)} className='font-noto font-medium cursor-pointer'>Users Name</p>
+                <p onClick={() => setDropDown(!dropDown)} className='font-noto font-medium cursor-pointer'>{activeUser.first_name + " " + activeUser.last_name}</p>
                 <p 
                     onClick={() => toggleDarkMode()}
                     className='text-xl cursor-pointer'

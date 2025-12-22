@@ -7,6 +7,8 @@ export default function SignUpForm () {
     const toggleAuthUser = useAuthStore((state) => state.toggleAuthUser);
     const signInUser = useAuthStore((state) => state.signInUser);
     const updateSignInUser = useAuthStore((state) => state.updateSignInUser);
+    const setActiveUser = useAuthStore((state) => state.setActiveUser);
+    const activeUser = useAuthStore((state) => state.activeUser)
     const navigate = useNavigate();
 
     const handleSubmit = (signInUser, users, e) => {
@@ -20,7 +22,9 @@ export default function SignUpForm () {
 
         if ( user.password === signInUser.password ) {
             toggleAuthUser();
-            navigate('/challenages')
+            setActiveUser(user);
+            console.log(user)
+            navigate('/challenages');
         }
         
     }
