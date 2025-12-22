@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 import NavBar from './Components/NavBar';
 import Challenages from './pages/Challenages/Challenages';
 import Leaderboard from './pages/Leaderboard/Leaderboard';
+import ProtectedRoutes from './Components/ProtectedRoute';
 
 function AppLayout() {
   return (
@@ -24,10 +25,14 @@ export default function App() {
         <Routes>
           <Route path='/' element={<CodersLogin />} />
           <Route path='/signup' element={<CodersSignUp />} />
-          <Route element={<AppLayout />}>
-            <Route path='/challenages' element={<Challenages />} />
-            <Route path='/leaderboard' element={<Leaderboard />} />
+
+          <Route element={<ProtectedRoutes />}>
+            <Route element={<AppLayout />}>
+              <Route path='/challenages' element={<Challenages />} />
+              <Route path='/leaderboard' element={<Leaderboard />} />
+            </Route>
           </Route>
+
         </Routes>
       </BrowserRouter>
     </main>

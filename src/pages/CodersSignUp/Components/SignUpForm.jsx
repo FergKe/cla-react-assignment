@@ -1,5 +1,6 @@
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useSignUpStore from "../../../Stores/useSignUpStore";
+import { signUpSchema } from '../../../forms/signupSchema';
 
 
 export default function SignUpForm () {
@@ -10,9 +11,16 @@ export default function SignUpForm () {
 
     const handleSubmit = (user, e) => {
         e.preventDefault()
+        const valid = signUpSchema.safeParse(user);
+
+        if ( !valid.success ) {
+            const fieldErrors = valid.error.flatten().fieldErrors;
+            console.log(fieldErrors)
+        } else {
+            createUser(user)
+            navigate('/')   
+        }
         
-        createUser(user)
-        navigate('/')
     }
 
     return (
@@ -52,7 +60,6 @@ export default function SignUpForm () {
                     type=""
                     className="bg-blue-500 h-12 rounded-lg text-white"
                     onClick={(e) => {handleSubmit(user, e), console.log(user)}}
-                    
                 >
                     Sign Up
                 </button>

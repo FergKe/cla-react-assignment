@@ -8,7 +8,6 @@ export default function SignUpForm () {
     const signInUser = useAuthStore((state) => state.signInUser);
     const updateSignInUser = useAuthStore((state) => state.updateSignInUser);
     const setActiveUser = useAuthStore((state) => state.setActiveUser);
-    const activeUser = useAuthStore((state) => state.activeUser)
     const navigate = useNavigate();
 
     const handleSubmit = (signInUser, users, e) => {
