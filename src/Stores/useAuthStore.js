@@ -5,26 +5,12 @@ const useAuthStore = create((set) => ({
 
     toggleAuthUser: () => set((state) => ({isAuthorised: !state.isAuthorised})),
 
-    signInUser: {
-        email: "",
-        passowrd: "",
-    },
-
     activeUser: {
-        first_name: "",
-        last_name: "",
+        firstName: "",
+        lastName: "",
         password: "",
         email: ""
     },
-
-    updateSignInUser: (field, value) =>
-        set((state) => ({
-            signInUser: {
-                ...state.signInUser,
-                [field]: value
-            },
-            
-        })),
     
     setActiveUser: (user) => 
         set((state) => ({

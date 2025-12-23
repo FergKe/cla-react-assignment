@@ -29,7 +29,7 @@ export default function NavBar () {
 
             <div id='nav-right-side' className='flex flex-row items-center gap-2'>
                 <div onClick={() => setDropDown(!dropDown)} className='bg-slate-500 size-8 rounded-full cursor-pointer'></div>
-                <p onClick={() => setDropDown(!dropDown)} className='font-noto font-medium cursor-pointer'>{activeUser.first_name + " " + activeUser.last_name}</p>
+                <p onClick={() => setDropDown(!dropDown)} className='font-noto font-medium cursor-pointer'>{activeUser.firstName + " " + activeUser.lastName}</p>
                 <p 
                     onClick={() => toggleDarkMode()}
                     className='text-xl cursor-pointer'
